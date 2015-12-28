@@ -18,12 +18,9 @@ $(document).ready(function() {
 // Fill chart with data when loaded 
 function populateChart() {
 
-    // Empty content array 
-    var populateChartArray = [];
-
     // jQuery AJAX call for JSON
     $.getJSON( '/d3Data/d3Chart', function( data ) {
- 
+    console.log(data)
          var margin = {top: 20, right: 20, bottom: 30, left: 60},
             width = 960 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
