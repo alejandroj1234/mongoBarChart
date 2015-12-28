@@ -94,8 +94,8 @@ function addChartValue(event) {
     
     // Use AJAX to post the object to our addChartValue service
     $.ajax({
-        type: 'POST',
-        data: addChartDataArray,
+        type: 'post',
+        data: JSON.stringify(addChartDataArray),
         url: '/d3Data/addChartValue',
         dataType: 'JSON'
     }).done(function( response ) {
