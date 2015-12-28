@@ -1,0 +1,26 @@
+extends layout
+
+block content
+    h1= title
+    p Welcome to our test
+
+    // Wrapper 
+    #wrapper
+
+        // ADD VALUE TO CHART 
+        h2 Add Value to Chart 
+        
+        #addChartValue
+            br
+            br
+            br
+            fieldset 
+                input#inputChartXAxis(type='text', placeholder='ChartXAxis')
+                input#inputChartYAxis(type='text', placeholder='ChartYAxis')
+                button#btnAddChartValue Add Chart Value
+        
+        // D3 CHART 
+        br
+        #chart
+
+
