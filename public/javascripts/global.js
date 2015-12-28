@@ -112,6 +112,7 @@ function addChartValue(event) {
         else {
 
             // If something goes wrong, alert the error message that our service returned
+            console.log('now')
             alert('Error: ' + response.msg);
 
         }
@@ -130,6 +131,7 @@ function deleteBar(mongoID) {
         if (response.msg === '') {
         }
         else {
+            console.log('now')
             alert('Error: ' + response.msg);
         }
 
