@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.listen(port);
+app.listen(process.env.PORT || 3000)
 
 // Make our db accessible to our router
 app.use(function(req,res,next){
