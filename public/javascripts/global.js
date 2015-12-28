@@ -5,7 +5,7 @@
 $(document).ready(function() {
 
     // Populate the chart on initial page load
-    populateChart();
+    //populateChart();
 
     // Add User button click
     $('#btnAddChartValue').on('click', addChartValue);
@@ -22,7 +22,7 @@ function populateChart() {
     var populateChartArray = [];
     console.log('hey')
     // jQuery AJAX call for JSON
-    $.getJSON( 'http://boiling-oasis-7395.herokuapp.com/d3Data/d3Chart', function( data ) {
+    $.getJSON( '/d3Data/d3Chart', function( data ) {
         console.log(data)
          var margin = {top: 20, right: 20, bottom: 30, left: 60},
             width = 960 - margin.left - margin.right,
@@ -106,7 +106,7 @@ function addChartValue(event) {
             $('#addChartValue fieldset input').val('');
 
             // Remove the old SVG and Update the table with the newly added value
-            document.getElementById('chart').firstChild.remove();
+            //document.getElementById('chart').firstChild.remove();
             populateChart();
 
         }
@@ -137,7 +137,7 @@ function deleteBar(mongoID) {
         }
 
         // Update the table
-        document.getElementById('chart').firstChild.remove();
+        //document.getElementById('chart').firstChild.remove();
         populateChart();
 
     });
