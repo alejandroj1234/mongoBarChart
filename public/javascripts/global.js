@@ -22,7 +22,7 @@ function populateChart() {
     var populateChartArray = [];
     console.log('hey')
     // jQuery AJAX call for JSON
-    $.getJSON( '/d3Data/d3Chart', function( data ) {
+    $.getJSON( 'http://boiling-oasis-7395.herokuapp.com/d3Data/d3Chart', function( data ) {
         console.log(data)
          var margin = {top: 20, right: 20, bottom: 30, left: 60},
             width = 960 - margin.left - margin.right,
