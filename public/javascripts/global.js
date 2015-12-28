@@ -5,7 +5,7 @@
 $(document).ready(function() {
 
     // Populate the chart on initial page load
-    //populateChart();
+    populateChart();
 
     // Add User button click
     $('#btnAddChartValue').on('click', addChartValue);
@@ -20,10 +20,10 @@ function populateChart() {
 
     // Empty content array 
     var populateChartArray = [];
-    console.log('hey')
+
     // jQuery AJAX call for JSON
     $.getJSON( '/d3Data/d3Chart', function( data ) {
-        console.log(data)
+ 
          var margin = {top: 20, right: 20, bottom: 30, left: 60},
             width = 960 - margin.left - margin.right,
             height = 500 - margin.top - margin.bottom;
@@ -50,8 +50,7 @@ function populateChart() {
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
         x.domain(data.map(function(d) { return d.xAxis; }));
-        //y.domain([0, d3.max(data, function(d) { return parseInt(d.yAxis); })]);
-        y.domain([0,20]);
+        y.domain([0, d3.max(data, function(d) { return parseInt(d.yAxis); })]);
         svg.append("g")
             .attr("class", "x axis")
             .attr("transform", "translate(0," + height + ")")
@@ -94,8 +93,8 @@ function addChartValue(event) {
     
     // Use AJAX to post the object to our addChartValue service
     $.ajax({
-        type: 'post',
-        data: JSON.stringify(addChartDataArray),
+        type: 'POST',
+        data: addChartDataArray,
         url: '/d3Data/addChartValue',
         dataType: 'JSON'
     }).done(function( response ) {
@@ -106,7 +105,7 @@ function addChartValue(event) {
             $('#addChartValue fieldset input').val('');
 
             // Remove the old SVG and Update the table with the newly added value
-            //document.getElementById('chart').firstChild.remove();
+            document.getElementById('chart').firstChild.remove();
             populateChart();
 
         }
@@ -137,7 +136,7 @@ function deleteBar(mongoID) {
         }
 
         // Update the table
-        //document.getElementById('chart').firstChild.remove();
+        document.getElementById('chart').firstChild.remove();
         populateChart();
 
     });

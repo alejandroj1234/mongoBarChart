@@ -1,5 +1,4 @@
 var express = require('express');
-var http = require('http');
 var port = process.env.PORT;
 var path = require('path');
 var logger = require('morgan');
