@@ -1,5 +1,5 @@
 var express = require('express');
-var port = process.env.PORT;
+//var port = process.env.PORT;
 var path = require('path');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -25,7 +25,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
-app.listen(process.env.PORT || 5000)
+app.set('port', process.env.PORT || 3000);
 
 // Make our db accessible to our router
 app.use(function(req,res,next){
