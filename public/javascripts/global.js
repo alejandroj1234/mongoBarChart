@@ -123,7 +123,7 @@ function deleteBar(mongoID) {
     // If they did, do our delete
     $.ajax({
         type: 'DELETE',
-        url: '/d3Data/deleteBar/' + mongoID.toString()
+        url: '/d3Data/deleteBar/' + mongoID
     }).done(function( response ) {
 
         // Check for a successful (blank) response
