@@ -18,6 +18,7 @@ router.get('/d3Chart', function(req, res) {
 router.post('/addChartValue', function(req, res) {
     var db = req.db;
     var collection = db.get('d3Chart');
+    console.log(req.body)
     collection.insert(req.body, function(err, result){
         res.send(
             (err === null) ? { msg: '' } : { msg: err }
